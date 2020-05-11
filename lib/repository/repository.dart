@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:fluttermovieapp/model/PersonResponse.dart';
 import 'package:fluttermovieapp/model/genreResponse.dart';
@@ -36,6 +38,8 @@ class MovieRepository{
     try {
       Response response =
       await _dio.get(getPlayingUrl, queryParameters: params);
+      var data = response.data;
+      log('response2: $data');
       return MovieResponse.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Exception occured: $error stackTrace: $stacktrace");
