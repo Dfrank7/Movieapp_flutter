@@ -70,7 +70,7 @@ class _NowPlayingState extends State<NowPlaying>{
         child: PageIndicatorContainer(
           align: IndicatorAlign.bottom,
           length: movies.take(4).length,
-          indicatorSpace: 8.0,
+          indicatorSpace: 7.0,
           padding: const EdgeInsets.all(5.0),
           indicatorColor: Style.Colors.titleColor,
           indicatorSelectorColor: Style.Colors.secondColor,

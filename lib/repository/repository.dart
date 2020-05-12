@@ -38,8 +38,8 @@ class MovieRepository{
     try {
       Response response =
       await _dio.get(getPlayingUrl, queryParameters: params);
-      var data = response.data;
-      log('response2: $data');
+//      var data = response.data;
+//      log('response2: $data');
       return MovieResponse.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Exception occured: $error stackTrace: $stacktrace");
@@ -51,6 +51,8 @@ class MovieRepository{
     var params = {"api_key": apiKey, "language": "en-US"};
     try {
       Response response = await _dio.get(getGenresUrl, queryParameters: params);
+      var data = response.data;
+      log('response2: $data');
       return GenreResponse.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Exception occured: $error stackTrace: $stacktrace");
