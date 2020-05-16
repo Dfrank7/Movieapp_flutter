@@ -5,6 +5,7 @@ import 'package:fluttermovieapp/model/PersonResponse.dart';
 import 'package:fluttermovieapp/model/genreResponse.dart';
 import 'package:fluttermovieapp/model/movieDetailResponse.dart';
 import 'package:fluttermovieapp/model/movieResponse.dart';
+import 'package:fluttermovieapp/model/videoResponse.dart';
 
 class MovieRepository{
 
@@ -96,19 +97,19 @@ class MovieRepository{
     }
   }
 
-//  Future<VideoResponse> getMovieVideos(int id) async {
-//    var params = {
-//      "api_key": apiKey,
-//      "language": "en-US"
-//    };
-//    try {
-//      Response response = await _dio.get(movieUrl + "/$id" + "/videos", queryParameters: params);
-//      return VideoResponse.fromJson(response.data);
-//    } catch (error, stacktrace) {
-//      print("Exception occured: $error stackTrace: $stacktrace");
-//      return VideoResponse.withError("$error");
-//    }
-//  }
+  Future<VideoResponse> getMovieVideos(int id) async {
+    var params = {
+      "api_key": apiKey,
+      "language": "en-US"
+    };
+    try {
+      Response response = await _dio.get(movieUrl + "/$id" + "/videos", queryParameters: params);
+      return VideoResponse.fromJson(response.data);
+    } catch (error, stacktrace) {
+      print("Exception occured: $error stackTrace: $stacktrace");
+      return VideoResponse.withError("$error");
+    }
+  }
 
   Future<MovieResponse> getSimilarMovies(int id) async {
     var params = {

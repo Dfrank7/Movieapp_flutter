@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttermovieapp/bloc/get_movies_bloc.dart';
 import 'package:fluttermovieapp/model/movie.dart';
 import 'package:fluttermovieapp/model/movieResponse.dart';
+import 'package:fluttermovieapp/screens/detail_screen.dart';
 import 'package:fluttermovieapp/style/theme.dart' as Style;
 
 class PopularMovies extends StatefulWidget{
@@ -119,7 +120,10 @@ class _PopularMovies extends State<PopularMovies>{
               ),
               child: GestureDetector(
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => DetailScreen(movie: movies[index])
+                  ),
+                  );
                 },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

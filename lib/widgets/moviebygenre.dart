@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttermovieapp/bloc/get_movies_byGenre.dart';
 import 'package:fluttermovieapp/model/movie.dart';
 import 'package:fluttermovieapp/model/movieResponse.dart';
+import 'package:fluttermovieapp/screens/detail_screen.dart';
 import 'package:fluttermovieapp/style/theme.dart' as Style;
 
 
@@ -112,7 +113,7 @@ class _MovieByGenre extends State<MovieByGenre>{
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                     // builder: (context) => MovieDetailScreen(movie: movies[index]),
+                      builder: (context) => DetailScreen(movie: movies[index]),
                     ),
                   );
                 },
