@@ -7,7 +7,7 @@ class MoviesBlocList{
   final MovieRepository repository = MovieRepository();
   final BehaviorSubject<MovieResponse> subject = BehaviorSubject<MovieResponse>();
 
-  getMovies() async {
+  getPopularMovies() async {
     MovieResponse response = await repository.getPopularMovies();
     subject.sink.add(response);
   }
@@ -19,4 +19,4 @@ class MoviesBlocList{
   BehaviorSubject<MovieResponse> get _subject => subject;
 }
 
-final moviesBloc = MoviesBlocList();
+final popularMoviesBloc = MoviesBlocList();

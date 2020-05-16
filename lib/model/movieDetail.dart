@@ -26,4 +26,6 @@ class MovieDetail {
         companies = (json["production_companies"] as List).map((i) => new Company.fromJson(i)).toList(),
         releaseDate = json["release_date"],
         runtime = json["runtime"];
+
+
 }

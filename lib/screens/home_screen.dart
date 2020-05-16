@@ -1,9 +1,11 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttermovieapp/bloc/get_movies_bloc.dart';
 import 'package:fluttermovieapp/style/theme.dart' as Style;
 import 'package:fluttermovieapp/widgets/genres.dart';
 import 'package:fluttermovieapp/widgets/now_playing.dart';
 import 'package:fluttermovieapp/widgets/personList.dart';
+import 'package:fluttermovieapp/widgets/popularMovies.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -27,7 +29,8 @@ class HomeScreen extends StatefulWidget {
         children: <Widget>[
           NowPlaying(),
           Genres(),
-          PersonList()
+          PersonList(),
+          PopularMovies()
 
         ],
       ),
